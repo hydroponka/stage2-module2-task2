@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
         }
         List<String> users = Users.getInstance().getUsers();
         for (String user : users){
-            if (user.equals(login) || password != null){
+            if (user.equals(login) && password != null){
                 try {
                     resp.sendRedirect("/user/hello.jsp");
                 }catch (IOException e){
